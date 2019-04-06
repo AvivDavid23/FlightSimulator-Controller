@@ -23,5 +23,15 @@ namespace FlightSimulator
         {
             InitializeComponent();
         }
+
+        private void OK_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Clear_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

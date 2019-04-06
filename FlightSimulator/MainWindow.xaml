@@ -16,9 +16,76 @@
             <Views:FlightBoard></Views:FlightBoard>
         </Grid>
         <Grid Grid.Column="1">
-            <Views:Joystick>
-                
-            </Views:Joystick>
+            <TabControl FontWeight="Bold" FontSize="16">
+                <TabItem Header="Manual">
+                    <DockPanel>
+                        <!--THRUTTLE-->
+                        <StackPanel  DockPanel.Dock="Left" Orientation="Horizontal" Margin="0 40">
+                            <TextBlock Text="&#x2190; throttle &#x2192;" VerticalAlignment="Center">
+                                <TextBlock.LayoutTransform>
+                                    <RotateTransform Angle="90"/>
+                                </TextBlock.LayoutTransform>
+                            </TextBlock>
+                            <Slider Name="throttleSlider" Maximum="1" Minimum="-1" Orientation="Vertical"/>
+                            <TextBlock Name="throttleValue" Text ="{Binding ElementName=throttleSlider,
+                                UpdateSourceTrigger=PropertyChanged, Path=Value, StringFormat={}{0:0.00}}"/>
+                        </StackPanel>
+
+                        <!--RUDDER-->
+                        <StackPanel DockPanel.Dock="Bottom" Margin="0 0 40 0">
+                            <TextBlock  Text="&#x2190; rudder &#x2192;" HorizontalAlignment="Center"/>
+                            <Slider Name="rudderSlider"  Maximum="1" Minimum="-1"/>
+                            <TextBlock Name="rudderValue" Text ="{Binding ElementName=rudderSlider,
+                                UpdateSourceTrigger=PropertyChanged, Path=Value, StringFormat={}{0:0.00}}" HorizontalAlignment="Right"/>
+                        </StackPanel>
+
+                        <!--ELEVATOR-->
+                        <!--TODO: add value bindnig to ViewModel-->
+                        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" >
+                            <TextBlock DockPanel.Dock="Right" Text="&#x2190; elevator &#x2192;" VerticalAlignment="Center">
+                            <TextBlock.LayoutTransform>
+                                <RotateTransform Angle="90"/>
+                            </TextBlock.LayoutTransform>
+                            </TextBlock>
+                        </StackPanel>
+                              
+                        <!--AILERON-->
+                        <!--TODO: add value bindnig to ViewModel-->
+                        <StackPanel DockPanel.Dock="top"  HorizontalAlignment="Center">
+                            <TextBlock Text="&#x2190; aileron &#x2192;"/>
+                        </StackPanel>
+
+                        <!--JOYSTICK-->
+                        <!--<Views:Joystick Width="auto" Height="auto" Margin ="10 10 10 20"></Views:Joystick>-->
+                      
+                    </DockPanel>
+
+                </TabItem>
+                <TabItem Header="Auto Pilot">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="5*"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <Grid Grid.Row="0">
+                            <TextBox Name="TextBlock" Grid.Row="0" FontWeight="Regular"
+                                     AcceptsReturn="True" TextWrapping="Wrap" >
+                            </TextBox>
+                        </Grid>
+                        <Grid Grid.Row="1">
+                            <WrapPanel HorizontalAlignment="Center">
+                                <Button x:Name="OK" Click="OK_Click" Margin="0 15 5 0" Content="OK" />
+                                <Button x:Name="Clear" Click="Clear_Click"  Margin="0 15 5 0" Content="Clear"/>
+                            </WrapPanel>
+
+                        </Grid>
+                    </Grid>
+
+                </TabItem>
+            </TabControl>
         </Grid>
     </Grid>
 </Window>
