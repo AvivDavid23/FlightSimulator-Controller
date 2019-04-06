@@ -18,52 +18,10 @@
         <Grid Grid.Column="1">
             <TabControl FontWeight="Bold" FontSize="16">
                 <TabItem Header="Manual">
-                    <DockPanel>
-                        <!--THRUTTLE-->
-                        <StackPanel  DockPanel.Dock="Left" Orientation="Horizontal" Margin="0 40">
-                            <TextBlock Text="&#x2190; throttle &#x2192;" VerticalAlignment="Center">
-                                <TextBlock.LayoutTransform>
-                                    <RotateTransform Angle="90"/>
-                                </TextBlock.LayoutTransform>
-                            </TextBlock>
-                            <Slider Name="throttleSlider" Maximum="1" Minimum="-1" Orientation="Vertical"/>
-                            <TextBlock Name="throttleValue" Text ="{Binding ElementName=throttleSlider,
-                                UpdateSourceTrigger=PropertyChanged, Path=Value, StringFormat={}{0:0.00}}"/>
-                        </StackPanel>
-
-                        <!--RUDDER-->
-                        <StackPanel DockPanel.Dock="Bottom" Margin="0 0 40 0">
-                            <TextBlock  Text="&#x2190; rudder &#x2192;" HorizontalAlignment="Center"/>
-                            <Slider Name="rudderSlider"  Maximum="1" Minimum="-1"/>
-                            <TextBlock Name="rudderValue" Text ="{Binding ElementName=rudderSlider,
-                                UpdateSourceTrigger=PropertyChanged, Path=Value, StringFormat={}{0:0.00}}" HorizontalAlignment="Right"/>
-                        </StackPanel>
-
-                        <!--ELEVATOR-->
-                        <!--TODO: add value bindnig to ViewModel-->
-                        <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" >
-                            <TextBlock DockPanel.Dock="Right" Text="&#x2190; elevator &#x2192;" VerticalAlignment="Center">
-                            <TextBlock.LayoutTransform>
-                                <RotateTransform Angle="90"/>
-                            </TextBlock.LayoutTransform>
-                            </TextBlock>
-                        </StackPanel>
-                              
-                        <!--AILERON-->
-                        <!--TODO: add value bindnig to ViewModel-->
-                        <StackPanel DockPanel.Dock="top"  HorizontalAlignment="Center">
-                            <TextBlock Text="&#x2190; aileron &#x2192;"/>
-                        </StackPanel>
-
-                        <!--JOYSTICK-->
-                        <!--<Views:Joystick Width="auto" Height="auto" Margin ="10 10 10 20"></Views:Joystick>-->
-                      
-                    </DockPanel>
-
+                    <Views:Manual></Views:Manual>
                 </TabItem>
                 <TabItem Header="Auto Pilot">
                     <Views:AutoPilot></Views:AutoPilot>
-
                 </TabItem>
             </TabControl>
         </Grid>

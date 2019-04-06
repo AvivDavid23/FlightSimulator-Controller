@@ -79,12 +79,15 @@
     <Compile Include="Views\FlightBoard.xaml.cs">
       <DependentUpon>FlightBoard.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\Joystick.xaml.cs">
+    <Compile Include="Views\Manual Components\Joystick.xaml.cs">
       <DependentUpon>Joystick.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Views\Manual.xaml.cs">
+      <DependentUpon>Manual.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <SubType>Designer</SubType>
@@ -98,7 +101,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Views\Joystick.xaml">
+    <Page Include="Views\Manual Components\Joystick.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Manual.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -130,8 +137,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\Windows\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
