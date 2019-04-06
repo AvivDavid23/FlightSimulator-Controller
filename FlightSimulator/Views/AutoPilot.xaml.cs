@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlightSimulator.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,18 +11,22 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace FlightSimulator
+namespace FlightSimulator.Views
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for AutoPilot.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class AutoPilot : UserControl
     {
-        public MainWindow()
+        private AutoPilotViewModel apViewModel;
+        public AutoPilot()
         {
             InitializeComponent();
+            apViewModel = new AutoPilotViewModel();
+            DataContext = apViewModel;
         }
     }
 }

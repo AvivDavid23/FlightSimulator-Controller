@@ -1,0 +1,31 @@
+﻿<UserControl x:Class="FlightSimulator.Views.AutoPilot"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:FlightSimulator.Views"
+             xmlns:ViewModels="clr-namespace:FlightSimulator.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="5*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <TextBox Name="TextBlock"  Grid.Row="0" FontWeight="Regular"
+                                     AcceptsReturn="True" TextWrapping="Wrap" >
+            </TextBox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <WrapPanel HorizontalAlignment="Center">
+                <Button x:Name="OK"  Margin="0 15 5 0" Content="OK" />
+                <Button x:Name="Clear" Margin="0 15 5 0" Content="Clear"/>
+            </WrapPanel>
+
+        </Grid>
+    </Grid>
+</UserControl>

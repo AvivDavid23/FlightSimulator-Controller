@@ -62,27 +62,7 @@
 
                 </TabItem>
                 <TabItem Header="Auto Pilot">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="*"/>
-                        </Grid.ColumnDefinitions>
-                        <Grid.RowDefinitions>
-                            <RowDefinition Height="5*"/>
-                            <RowDefinition Height="*"/>
-                        </Grid.RowDefinitions>
-                        <Grid Grid.Row="0">
-                            <TextBox Name="TextBlock" Grid.Row="0" FontWeight="Regular"
-                                     AcceptsReturn="True" TextWrapping="Wrap" >
-                            </TextBox>
-                        </Grid>
-                        <Grid Grid.Row="1">
-                            <WrapPanel HorizontalAlignment="Center">
-                                <Button x:Name="OK" Click="OK_Click" Margin="0 15 5 0" Content="OK" />
-                                <Button x:Name="Clear" Click="Clear_Click"  Margin="0 15 5 0" Content="Clear"/>
-                            </WrapPanel>
-
-                        </Grid>
-                    </Grid>
+                    <Views:AutoPilot></Views:AutoPilot>
 
                 </TabItem>
             </TabControl>
