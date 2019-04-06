@@ -24,7 +24,7 @@ namespace FlightSimulator.Views
     {
         /// <summary>Current Aileron</summary>
         public static readonly DependencyProperty AileronProperty =
-            DependencyProperty.Register("Aileron", typeof(double), typeof(Joystick),null);
+            DependencyProperty.Register("Aileron", typeof(double), typeof(Joystick), null);
 
         /// <summary>Current Elevator</summary>
         public static readonly DependencyProperty ElevatorProperty =

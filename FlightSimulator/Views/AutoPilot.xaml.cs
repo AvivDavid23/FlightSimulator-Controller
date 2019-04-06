@@ -21,12 +21,12 @@ namespace FlightSimulator.Views
     /// </summary>
     public partial class AutoPilot : UserControl
     {
-        private AutoPilotViewModel apViewModel;
+        AutoPilotViewModel viewModel;
         public AutoPilot()
         {
             InitializeComponent();
-            apViewModel = new AutoPilotViewModel();
-            DataContext = apViewModel;
+            viewModel = new AutoPilotViewModel();
+            DataContext = viewModel;
         }
     }
 }
