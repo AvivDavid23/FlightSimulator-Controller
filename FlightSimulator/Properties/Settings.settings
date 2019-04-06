@@ -1,0 +1,15 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="FlightSimulator.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="FlightServerIP" Type="System.String" Scope="User">
+      <Value Profile="(Default)">127.0.0.1</Value>
+    </Setting>
+    <Setting Name="FlightInfoPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5400</Value>
+    </Setting>
+    <Setting Name="FlightCommandPort" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">5402</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>
