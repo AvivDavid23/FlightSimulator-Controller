@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FlightSimulator"
+        xmlns:Views="clr-namespace:FlightSimulator.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
@@ -11,5 +12,13 @@
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <Views:FlightBoard></Views:FlightBoard>
+        </Grid>
+        <Grid Grid.Column="1">
+            <Views:Joystick>
+                
+            </Views:Joystick>
+        </Grid>
     </Grid>
 </Window>
