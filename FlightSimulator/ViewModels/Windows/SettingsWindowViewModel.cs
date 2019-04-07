@@ -1,5 +1,5 @@
-﻿using FlightSimulator.Model;
-using FlightSimulator.Model.Interface;
+﻿using FlightSimulator.Models;
+using FlightSimulator.Models.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,9 +14,9 @@ namespace FlightSimulator.ViewModels.Windows
     {
         private ISettingsModel model;
 
-        public SettingsWindowViewModel(ISettingsModel model)
+        public SettingsWindowViewModel()
         {
-            this.model = model;
+            this.model = new ApplicationSettingsModel();
         }
 
         public string FlightServerIP

@@ -1,0 +1,43 @@
+﻿<Window x:Class="FlightSimulator.Views.Windows.Settings"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FlightSimulator.Views.Windows"
+        mc:Ignorable="d"
+        Title="Settings" Height="250" Width="450">
+    <Grid TextBlock.FontSize="14">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="3*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="2*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.Resources>
+            <Style TargetType="TextBlock">
+                <Setter Property="Padding" Value="3"/>
+                <Setter Property="Margin" Value="3"/>
+            </Style>
+            <Style TargetType="TextBox">
+                <Setter Property="Padding" Value="3"/>
+                <Setter Property="Margin" Value="3"/>
+            </Style>
+        </Grid.Resources>
+        <TextBlock>Flight Server IP:</TextBlock>
+        <TextBox x:Name="serverIP" Grid.Column="2" Text="{Binding FlightServerIP}"></TextBox>
+        <TextBlock Grid.Row="1">Flight Info Port:</TextBlock>
+        <TextBox x:Name="infoPort" Grid.Row="1" Grid.Column="2" Text="{Binding FlightInfoPort}"></TextBox>
+        <TextBlock Grid.Row="2">Flight Command Port:</TextBlock>
+        <TextBox x:Name="commandPort" Grid.Row="2" Grid.Column="2" Text="{Binding FlightCommandPort}"></TextBox>
+        <WrapPanel Grid.Row="3" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Button x:Name="ok" Command="{Binding ClickCommand}" Margin="5"
+        Padding="5">Ok</Button>
+            <Button x:Name="cancle" Command="{Binding CancelCommand}" Grid.Row="3" Grid.ColumnSpan="2" Margin="5"
+        Padding="5" >Cancel</Button>
+        </WrapPanel>
+    </Grid>
+</Window>

@@ -1,11 +1,11 @@
-﻿using FlightSimulator.Model.Interface;
+﻿using FlightSimulator.Models.Interface;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlightSimulator.Model
+namespace FlightSimulator.Models
 {
     public class ApplicationSettingsModel : ISettingsModel
     {

@@ -1,4 +1,4 @@
-﻿using FlightSimulator.Model.EventArgs;
+﻿using FlightSimulator.Models.EventArgs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -89,7 +89,8 @@ namespace FlightSimulator.Views
         /// <summary>Delegate holding data for joystick state change</summary>
         /// <param name="sender">The object that fired the event</param>
         /// <param name="args">Holds new values for Aileron and Elevator</param>
-        public delegate void OnScreenJoystickEventHandler(Joystick sender, VirtualJoystickEventArgs args);
+        public delegate void OnScreenJoystickEventHandler(Joystick sender, 
+            VirtualJoystickEventArgs args);
 
         /// <summary>Delegate for joystick events that hold no data</summary>
         /// <param name="sender">The object that fired the event</param>

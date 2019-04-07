@@ -22,8 +22,8 @@
         </Grid>
         <Grid Grid.Row="1">
             <WrapPanel HorizontalAlignment="Center">
-                <Button x:Name="OK" Command="{Binding OkCommand}" Margin="0 15 5 0" Content="OK" />
-                <Button x:Name="Clear" Command="{Binding ClearCommand}" Margin="0 15 5 0" Content="Clear"/>
+                <Button x:Name="OK" Command="{Binding OkCommand}" Margin="0 15 5 0" Content="OK" Padding="5 5 5 5"/>
+                <Button x:Name="Clear" Command="{Binding ClearCommand}" Margin="0 15 5 0" Content="Clear" Padding="5 5 5 5"/>
             </WrapPanel>
 
         </Grid>

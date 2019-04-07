@@ -1,5 +1,5 @@
-﻿using FlightSimulator.Model;
-using FlightSimulator.Models;
+﻿using FlightSimulator.Models;
+using System;
 using System.ComponentModel;
 using System.Windows.Input;
 
@@ -9,7 +9,7 @@ namespace FlightSimulator.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        private AutoPilotModel model; // Model
+       
 
         private string commands; // Commands for simulator
 
@@ -17,7 +17,7 @@ namespace FlightSimulator.ViewModels
 
         public AutoPilotViewModel()
         {
-            model = new AutoPilotModel();
+           
 
         }
 
@@ -28,7 +28,7 @@ namespace FlightSimulator.ViewModels
 
         void OnOkClick()
         {
-        
+
         }
         #endregion
 
@@ -46,6 +46,7 @@ namespace FlightSimulator.ViewModels
         public void NotifyPropertyChanged(string propName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propName));
-        }
+        }
+
     }
 }

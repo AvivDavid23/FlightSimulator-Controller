@@ -7,7 +7,9 @@
         xmlns:Views="clr-namespace:FlightSimulator.Views"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
+    <DockPanel>
+        <TextBlock FontWeight="Bold" FontSize="20" DockPanel.Dock="Top" HorizontalAlignment="Center">Flight Simulator</TextBlock>
+        <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="*"/>
@@ -26,4 +28,5 @@
             </TabControl>
         </Grid>
     </Grid>
+    </DockPanel>
 </Window>

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlightSimulator.Model.Interface
+namespace FlightSimulator.Models.Interface
 {
     public interface ISettingsModel
     {

@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using FlightSimulator.Model;
+using FlightSimulator.Models;
 using FlightSimulator.ViewModels;
 using Microsoft.Research.DynamicDataDisplay;
 using Microsoft.Research.DynamicDataDisplay.DataSources;
@@ -29,6 +29,7 @@ namespace FlightSimulator.Views
         public FlightBoard()
         {
             InitializeComponent();
+            DataContext = new FlightBoardViewModel();
         }
 
         private void UserControl_Loaded(object sender, RoutedEventArgs e)

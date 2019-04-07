@@ -46,7 +46,7 @@
         </StackPanel>
 
         <!--JOYSTICK-->
-        <local:Joystick/>
+        <!--<local:Joystick/>-->
        
     </DockPanel>
 

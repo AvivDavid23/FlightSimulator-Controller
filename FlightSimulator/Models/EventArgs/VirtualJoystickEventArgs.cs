@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace FlightSimulator.Model.EventArgs
+namespace FlightSimulator.Models.EventArgs
 {
     public class VirtualJoystickEventArgs
     {

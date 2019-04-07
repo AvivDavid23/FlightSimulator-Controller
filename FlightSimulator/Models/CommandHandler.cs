@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace FlightSimulator.Model
+namespace FlightSimulator.Models
 {
     public class CommandHandler : ICommand
     {
