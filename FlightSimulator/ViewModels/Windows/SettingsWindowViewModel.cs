@@ -59,6 +59,9 @@ namespace FlightSimulator.ViewModels.Windows
         public void ReloadSettings()
         {
             model.ReloadSettings();
+            FlightServerIP = model.FlightServerIP;
+            FlightCommandPort = model.FlightCommandPort;
+            FlightInfoPort = model.FlightInfoPort;
         }
 
         #region Commands

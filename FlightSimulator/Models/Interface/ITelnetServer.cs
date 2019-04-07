@@ -1,6 +1,6 @@
 ﻿namespace FlightSimulator.Models.Interface
 {
-    interface TCP_Server
+    interface ITelnetServer
     {
         void accept(string ip, int port);
 

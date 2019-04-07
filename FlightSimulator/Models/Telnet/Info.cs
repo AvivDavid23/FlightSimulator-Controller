@@ -6,9 +6,10 @@ using System.Text;
 using System.Threading.Tasks;
 using FlightSimulator.Models.Interface;
 
-namespace FlightSimulator.Models
+namespace FlightSimulator.Models.TCP
 {
-    class Info 
+    class Info : ITelnetServer
     {
+
     }
 }

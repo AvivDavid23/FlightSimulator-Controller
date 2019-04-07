@@ -41,8 +41,8 @@
 
         <!--AILERON-->
         <!--TODO: add value bindnig to ViewModel-->
-        <StackPanel DockPanel.Dock="top"  HorizontalAlignment="Center" Margin="0 10 10 0">
-            <TextBlock Text="&#x2190; aileron &#x2192;"/>
+        <StackPanel DockPanel.Dock="top" Margin="0 10 10 0">
+            <TextBlock Text="&#x2190; aileron &#x2192;" HorizontalAlignment="Center"/>
         </StackPanel>
 
         <!--JOYSTICK-->
