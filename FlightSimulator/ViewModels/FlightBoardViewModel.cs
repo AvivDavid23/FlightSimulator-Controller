@@ -27,10 +27,10 @@ namespace FlightSimulator.ViewModels
         private ICommand settingsCommand; // Settings command for settings button
         public ICommand SettingsCommand { get { return settingsCommand ?? (settingsCommand = new CommandHandler(() => OnSttingsClick())); } }
 
-        // Allow to create only one settings window:
+        // Load settings window
         void OnSttingsClick()
         {
-
+            // Allow to create only one settings window:
             if (!settingsChild.IsLoaded)
             {
                 settingsChild = new Settings();

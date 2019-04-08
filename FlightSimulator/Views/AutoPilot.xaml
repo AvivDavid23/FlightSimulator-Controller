@@ -16,14 +16,14 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid Grid.Row="0">
-            <TextBox Name="TextBlock" Text="{Binding Commands}"  Grid.Row="0" FontWeight="Regular"
-                                     AcceptsReturn="True" TextWrapping="Wrap" >
+            <TextBox Name="TextBlock" Text="{Binding Commands, UpdateSourceTrigger=PropertyChanged}" Background="{Binding Background,
+                UpdateSourceTrigger=PropertyChanged}" Grid.Row="0" FontWeight="Bold" FontSize="16" AcceptsReturn="True" TextWrapping="Wrap" >
             </TextBox>
         </Grid>
         <Grid Grid.Row="1">
-            <WrapPanel HorizontalAlignment="Center">
-                <Button x:Name="OK" Command="{Binding OkCommand}" Margin="0 15 5 0" Content="OK" Padding="5 5 5 5"/>
-                <Button x:Name="Clear" Command="{Binding ClearCommand}" Margin="0 15 5 0" Content="Clear" Padding="5 5 5 5"/>
+            <WrapPanel HorizontalAlignment="Center" >
+                <Button x:Name="OK" Command="{Binding OkCommand}" FontWeight="Bold" Margin="0 15 5 0" Content="OK" Padding="5 5 5 5"/>
+                <Button x:Name="Clear" Command="{Binding ClearCommand}" FontWeight="Bold" Margin="5 15 0 0" Content="Clear" Padding="5 5 5 5"/>
             </WrapPanel>
 
         </Grid>
