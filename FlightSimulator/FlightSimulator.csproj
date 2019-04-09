@@ -60,12 +60,14 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Comunication\Info.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Models\ApplicationSettingsModel.cs" />
     <Compile Include="Models\CommandHandler.cs" />
     <Compile Include="Models\EventArgs\VirtualJoystickEventArgs.cs" />
+    <Compile Include="Models\FlightBoardModel.cs" />
     <Compile Include="Models\Interface\ISettingsModel.cs" />
     <Compile Include="ViewModels\AutoPilotViewModel.cs" />
     <Compile Include="ViewModels\BaseNotify.cs" />

@@ -43,10 +43,8 @@
         <!--TODO: add value bindnig to ViewModel-->
         <StackPanel DockPanel.Dock="top" Margin="0 0 10 0">
             <TextBlock Text="&#x2190; aileron &#x2192;" HorizontalAlignment="Center"/>
-            <TextBlock 
-        x:Name="TestingMessage"
-        Text="{Binding Path=Aileron, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type local:Joystick}}}"
-        />
+            <TextBlock Text="{Binding Path=Aileron, RelativeSource={RelativeSource Mode=FindAncestor,
+                AncestorType={x:Type local:Joystick}}}"/>
             
         </StackPanel>
 

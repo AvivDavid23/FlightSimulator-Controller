@@ -10,7 +10,7 @@
 
     <DockPanel>
         <WrapPanel DockPanel.Dock="Top" HorizontalAlignment="Center" >
-            <Button x:Name="Connect"  Content="Connect"  Margin="0 15 5 15" Padding="5 5 5 5"/>
+            <Button x:Name="Connect"  Content="Connect" Command="{Binding ConnectsCommand}"  Margin="0 15 5 15" Padding="5 5 5 5"/>
             <Button x:Name="Settings" Command="{Binding SettingsCommand}" Content="Settings"  Margin="0 15 5 15" Padding="5 5 5 5"/>
         </WrapPanel>
         <Grid>
