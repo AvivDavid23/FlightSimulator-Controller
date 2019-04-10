@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
-using FlightSimulator.Comunication;
+using FlightSimulator.Communication;
 using FlightSimulator.ViewModels;
 
 namespace FlightSimulator.Models
@@ -29,7 +29,7 @@ namespace FlightSimulator.Models
             set
             {
                 lon = value;
-                NotifyPropertyChanged("Lon"); // Notify view!
+                NotifyPropertyChanged("Lon"); // Notify viewModel
             }
         }
 
@@ -41,25 +41,25 @@ namespace FlightSimulator.Models
             set
             {
                 lat = value;
-                NotifyPropertyChanged("Lat"); // Notify view!
+                NotifyPropertyChanged("Lat"); // Notify viewModel
             }
         }
 
         // tell server to open and start reading
-        public void open(string ip, int port)
+        public void Open(string ip, int port)
         {
-            info.open(ip, port);
-            startRead();
+            info.Open(ip, port);
+            StartRead();
 
         }
 
         // read input in a new thread, notify view model about the new data to 
-        void startRead()
+        void StartRead()
         {
             new Thread(delegate () {
                 while (true)
                 {
-                    string[] args = info.read();
+                    string[] args = info.Read();
                     Lon = Convert.ToDouble(args[0]);
                     Lat = Convert.ToDouble(args[1]);
                 }

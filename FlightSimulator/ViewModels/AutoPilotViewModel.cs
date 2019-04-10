@@ -9,6 +9,8 @@ namespace FlightSimulator.ViewModels
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
+        private AutoPilotModel model = new AutoPilotModel();
+
         private Brush background = Brushes.White; // Background color
 
         private string commands; // Commands to be sent
@@ -37,7 +39,6 @@ namespace FlightSimulator.ViewModels
 
         }
 
-        // TODO: Ok command //
         #region okCommand
         private ICommand okCommand; // Ok command for clear button
         public ICommand OkCommand
@@ -46,9 +47,12 @@ namespace FlightSimulator.ViewModels
             {
                 return okCommand ?? (okCommand = new CommandHandler(() =>
                 {
+                    string toBeSent = Commands;
                     Commands = ""; // remove text
                     NotifyPropertyChanged(Commands); // Notify view!
                     Background = Brushes.White; // make background white again
+                    model.SendCommands(toBeSent);
+
                 }));
             }
         }

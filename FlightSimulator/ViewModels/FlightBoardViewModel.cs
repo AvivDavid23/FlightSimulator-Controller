@@ -1,9 +1,10 @@
-﻿using FlightSimulator.Comunication;
+﻿using FlightSimulator.Communication;
 using FlightSimulator.Models;
 using FlightSimulator.Views.Windows;
 using System;
 using System.ComponentModel;
 using System.Windows.Input;
+using FlightSimulator.Communication;
 
 namespace FlightSimulator.ViewModels
 {
@@ -30,10 +31,10 @@ namespace FlightSimulator.ViewModels
         public FlightBoardViewModel()
         {
             model = new FlightBoardModel(new Info());
-            model.PropertyChanged +=
-            delegate (Object sender, PropertyChangedEventArgs e)
+            model.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
                 NotifyPropertyChanged(e.PropertyName);
+                
             };
         }
 
@@ -61,10 +62,10 @@ namespace FlightSimulator.ViewModels
         private ICommand connectsCommand; // Settings command for settings button
         public ICommand ConnectsCommand { get { return connectsCommand ?? (connectsCommand = new CommandHandler(() => OnConnectClick())); } }
 
-        // Load settings window
         void OnConnectClick()
         {
-            model.open(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightInfoPort); // open info server
+            model.Open(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightInfoPort); // open info server
+            Commands.Instance.Connect(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightCommandPort); // conect to simulator
         }
 
         #endregion

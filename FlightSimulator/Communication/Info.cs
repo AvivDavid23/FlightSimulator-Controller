@@ -2,7 +2,7 @@
 using System.Net;
 using System.Net.Sockets;
 
-namespace FlightSimulator.Comunication
+namespace FlightSimulator.Communication
 {
     class Info
     {
@@ -12,7 +12,7 @@ namespace FlightSimulator.Comunication
         private BinaryReader reader;
 
         // open server with ip and port
-        public void open(string ip, int port)
+        public void Open(string ip, int port)
         {
             listener = new TcpListener(new IPEndPoint(IPAddress.Parse(ip), port));
             listener.Start();
@@ -20,7 +20,7 @@ namespace FlightSimulator.Comunication
         }
 
         // read simulator input and return it to the model
-        public string[] read()
+        public string[] Read()
         {
             if (!connected)
             {
