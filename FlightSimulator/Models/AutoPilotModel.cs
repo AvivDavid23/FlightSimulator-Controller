@@ -8,10 +8,13 @@ namespace FlightSimulator.Models
         // send commands to the simulator
         public void SendCommands(string input)
         {
-            new Thread(delegate ()
+            if (Commands.Instance.Connected)
             {
-                Commands.Instance.SendCommands(input);
-            }).Start();
+                new Thread(delegate ()
+                {
+                    Commands.Instance.SendCommands(input);
+                }).Start();
+            }
 
         }
 

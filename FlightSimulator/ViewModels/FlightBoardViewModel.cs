@@ -3,8 +3,8 @@ using FlightSimulator.Models;
 using FlightSimulator.Views.Windows;
 using System;
 using System.ComponentModel;
+using System.Threading;
 using System.Windows.Input;
-using FlightSimulator.Communication;
 
 namespace FlightSimulator.ViewModels
 {
@@ -34,7 +34,7 @@ namespace FlightSimulator.ViewModels
             model.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
             {
                 NotifyPropertyChanged(e.PropertyName);
-                
+
             };
         }
 
@@ -64,8 +64,19 @@ namespace FlightSimulator.ViewModels
 
         void OnConnectClick()
         {
+            if (model.IsConnected()) // if there is a connection, establish new connections to info and commands
+            {
+                model.StopRead();
+                Commands.Instance.Reset();
+                System.Threading.Thread.Sleep(2000); // let info server finish last read
+            }
+            new Thread(delegate ()
+            {
+                Commands.Instance.Connect(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightCommandPort); // conect to simulator
+            }).Start();
             model.Open(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightInfoPort); // open info server
-            Commands.Instance.Connect(ApplicationSettingsModel.Instance.FlightServerIP, ApplicationSettingsModel.Instance.FlightCommandPort); // conect to simulator
+
+
         }
 
         #endregion

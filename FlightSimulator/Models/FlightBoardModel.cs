@@ -1,12 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
-using FlightSimulator.Communication;
+﻿using FlightSimulator.Communication;
 using FlightSimulator.ViewModels;
+using System;
+using System.ComponentModel;
+using System.Threading;
 
 namespace FlightSimulator.Models
 {
@@ -56,8 +52,9 @@ namespace FlightSimulator.Models
         // read input in a new thread, notify view model about the new data to 
         void StartRead()
         {
-            new Thread(delegate () {
-                while (true)
+            new Thread(delegate ()
+            {
+                while (!info.Stop)
                 {
                     string[] args = info.Read();
                     Lon = Convert.ToDouble(args[0]);
@@ -66,6 +63,11 @@ namespace FlightSimulator.Models
             }).Start();
         }
 
+        // ret true is server is up
+        public bool IsConnected() { return info.Connected; }
+
+        // tell server to stop read
+        public void StopRead() { info.Stop = true; }
 
         public void NotifyPropertyChanged(string propName)
         {

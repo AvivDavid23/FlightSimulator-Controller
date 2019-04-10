@@ -6,25 +6,30 @@ namespace FlightSimulator.Communication
 {
     class Info
     {
-        private bool connected = false;
+        public bool Connected { get; set; } = false;
+        public bool Stop { get; set; } = false;
         private TcpListener listener;
         private TcpClient client;
         private BinaryReader reader;
 
+
+
         // open server with ip and port
         public void Open(string ip, int port)
         {
+            if (listener != null) Close();
             listener = new TcpListener(new IPEndPoint(IPAddress.Parse(ip), port));
             listener.Start();
-
         }
+
+        public void Close() { client.Close(); listener.Stop(); Connected = false; }
 
         // read simulator input and return it to the model
         public string[] Read()
         {
-            if (!connected)
+            if (!Connected)
             {
-                connected = true;
+                Connected = true;
                 client = listener.AcceptTcpClient();
                 reader = new BinaryReader(client.GetStream());
             }

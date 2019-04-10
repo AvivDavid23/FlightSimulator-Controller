@@ -30,6 +30,7 @@ namespace FlightSimulator.Communication
         #endregion
 
 
+        public void Reset() { m_Instance = null; }
         // connect to server
         public void Connect(string ip, int port)
         {
@@ -49,8 +50,8 @@ namespace FlightSimulator.Communication
         // send commands to the simulator
         public void SendCommands(string input)
         {
+            if (string.IsNullOrEmpty(input)) return;
             if (FirstTime) { writer = new BinaryWriter(client.GetStream()); FirstTime = false; }
-
             string[] commands = input.Split('\n');
 
             foreach (string command in commands)
