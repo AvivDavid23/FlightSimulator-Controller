@@ -52,7 +52,7 @@ namespace FlightSimulator.Communication
             foreach (string command in commands)
             {
                 string tmp = command + "\r\n";
-                writer.Write(tmp);
+                writer.Write(System.Text.Encoding.ASCII.GetBytes(tmp));
                 System.Threading.Thread.Sleep(2000); // 2 seconds delay
             }
         }
