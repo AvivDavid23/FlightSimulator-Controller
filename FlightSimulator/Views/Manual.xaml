@@ -27,12 +27,16 @@
                                 UpdateSourceTrigger=PropertyChanged, Path=Value, StringFormat={}{0:0.00}}" HorizontalAlignment="Right"/>
             <Slider Name="rudderSlider"  Maximum="1" Minimum="-1" Value="{Binding Rudder, UpdateSourceTrigger=PropertyChanged, Mode=TwoWay}"/>
             <TextBlock Text="&#x2190; rudder &#x2192;" HorizontalAlignment="Center"/>
-            
         </StackPanel>
 
         <!--ELEVATOR-->
         <!--TODO: add value bindnig to screen-->
         <StackPanel DockPanel.Dock="Right" Orientation="Horizontal" Margin="10 40 0 40">
+            <TextBlock Name="E" Text="{Binding Elevator, UpdateSourceTrigger=PropertyChanged , Mode=OneWayToSource, StringFormat={}{0:0.00}}">
+                <TextBlock.LayoutTransform>
+                    <RotateTransform Angle="90"/>
+                </TextBlock.LayoutTransform>
+            </TextBlock>
             <TextBlock DockPanel.Dock="Right" Text="&#x2190; elevator &#x2192;" VerticalAlignment="Center">
                 <TextBlock.LayoutTransform>
                     <RotateTransform Angle="90"/>
@@ -44,14 +48,13 @@
         <!--TODO: add value bindnig to screen-->
         <StackPanel DockPanel.Dock="top" Margin="0 0 10 0">
             <TextBlock Text="&#x2190; aileron &#x2192;" HorizontalAlignment="Center"/>
-            <TextBlock Text="{Binding Path=Aileron, RelativeSource={RelativeSource Mode=FindAncestor,
-                AncestorType={x:Type local:Joystick}}}"/>
-            
+            <TextBlock Name="A" Text="{Binding Aileron, UpdateSourceTrigger=PropertyChanged ,Mode=OneWayToSource}" HorizontalAlignment="Right"/>
         </StackPanel>
 
-        <!--JOYSTICK-->
-        <local:Joystick/>
-
+        <Viewbox>
+            <local:Joystick Aileron="{Binding ElementName=A, Path=Text, Mode=OneWayToSource}"
+                            Elevator="{Binding ElementName=E, Path=Text, Mode=OneWayToSource}"/>
+        </Viewbox>
+       
     </DockPanel>
-
 </UserControl>

@@ -16,26 +16,15 @@ namespace FlightSimulator.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
+        public double Lon { get; }
 
-
-        public double Lon
-        {
-            get;
-        }
-
-        public double Lat
-        {
-            get;
-        }
+        public double Lat { get; }
 
         public FlightBoardViewModel()
         {
             model = new FlightBoardModel(new Info());
-            model.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
-            {
-                NotifyPropertyChanged(e.PropertyName);
+            model.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e) { NotifyPropertyChanged(e.PropertyName); };
 
-            };
         }
 
         #region Setting Command
@@ -57,8 +46,6 @@ namespace FlightSimulator.ViewModels
         #endregion
 
         #region Connect Command
-
-        // TODO - Open commands client
         private ICommand connectsCommand; // Settings command for settings button
         public ICommand ConnectsCommand { get { return connectsCommand ?? (connectsCommand = new CommandHandler(() => OnConnectClick())); } }
 
@@ -68,7 +55,7 @@ namespace FlightSimulator.ViewModels
             {
                 model.StopRead();
                 Commands.Instance.Reset();
-                System.Threading.Thread.Sleep(2000); // let info server finish last read
+                System.Threading.Thread.Sleep(1000); // let info server finish last read
             }
             new Thread(delegate ()
             {
