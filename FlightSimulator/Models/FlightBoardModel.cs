@@ -3,6 +3,7 @@ using FlightSimulator.ViewModels;
 using System;
 using System.ComponentModel;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace FlightSimulator.Models
 {
@@ -46,13 +47,12 @@ namespace FlightSimulator.Models
         {
             info.Open(ip, port);
             StartRead();
-
         }
 
-        // read input in a new thread, notify view model about the new data to 
+        // read input in a new thread, notify view model about the new data
         void StartRead()
         {
-            new Thread(delegate ()
+            new Task(delegate ()
             {
                 while (!info.Stop)
                 {
@@ -63,7 +63,7 @@ namespace FlightSimulator.Models
             }).Start();
         }
 
-        // ret true is server is up
+        // ret true if server is up
         public bool IsConnected() { return info.Connected; }
 
         // tell server to stop read

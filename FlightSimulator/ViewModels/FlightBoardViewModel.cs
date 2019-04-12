@@ -16,14 +16,19 @@ namespace FlightSimulator.ViewModels
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public double Lon { get; }
+        public double Lon { get; set; }
 
-        public double Lat { get; }
+        public double Lat { get; set; }
 
         public FlightBoardViewModel()
         {
             model = new FlightBoardModel(new Info());
-            model.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e) { NotifyPropertyChanged(e.PropertyName); };
+            model.PropertyChanged += delegate (Object sender, PropertyChangedEventArgs e)
+            {
+                if (e.PropertyName == "Lat") Lat = model.Lat;
+                else if (e.PropertyName == "Lon") Lon = model.Lon;
+                NotifyPropertyChanged(e.PropertyName);
+            };
 
         }
 

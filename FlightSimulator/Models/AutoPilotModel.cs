@@ -1,5 +1,6 @@
 ﻿using FlightSimulator.Communication;
 using System.Threading;
+using System.Threading.Tasks;
 
 namespace FlightSimulator.Models
 {
@@ -10,7 +11,7 @@ namespace FlightSimulator.Models
         {
             if (Commands.Instance.Connected)
             {
-                new Thread(delegate ()
+                new Task(delegate ()
                 {
                     Commands.Instance.SendCommands(input);
                 }).Start();
