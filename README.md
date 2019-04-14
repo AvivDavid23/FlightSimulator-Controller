@@ -15,7 +15,7 @@ Make sure to run FlightGear with the following settings:
 
 ------------
 
-### Instructions
+### Instructions:
 Launch the simulator and while it loads, press the connect button.
 On the left side grid you will see the path of the airplane.
 On the right side you can either manually controll the plane or automatically:
