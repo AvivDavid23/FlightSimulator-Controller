@@ -13,7 +13,7 @@ Make sure to run FlightGear with the following settings:
 
 `--generic=socket,out,10,SERVER_IP,INFO_PORT,tcp,generic_small`
 
-`--telnet=socket,in,10,127.0.0.1,COMMAND_PORT,tcp`
+`--telnet=socket,in,10,SERVER_IP,COMMAND_PORT,tcp`
 
 ------------
 
