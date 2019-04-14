@@ -10,7 +10,9 @@ Make sure to add generic_small.xml to data/protocol folder in FlightGear install
 ### Settings:
 Press the settings button to change server IP, info server port and  command port.
 Make sure to run FlightGear with the following settings:
+
 `--generic=socket,out,10,SERVER_IP,INFO_PORT,tcp,generic_small`
+
 `--telnet=socket,in,10,127.0.0.1,COMMAND_PORT,tcp`
 
 ------------
